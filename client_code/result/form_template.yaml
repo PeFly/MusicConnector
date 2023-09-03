@@ -1,0 +1,29 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:standard-page.html'}
+components:
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - type: Label
+    properties: {role: body, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
+      spacing_below: small, italic: false, background: '', bold: false, underline: false,
+      icon: ''}
+    name: result_summary
+    layout_properties: {grid_position: 'FLOYTK,JWFMVQ'}
+    data_bindings: []
+- type: Spacer
+  properties: {visible: false, spacing_above: small, spacing_below: small, height: 32,
+    tooltip: ''}
+  name: spacer_1
+  layout_properties: {slot: nav-right}
+- type: RichText
+  properties: {role: null, align: center, tooltip: '', enable_slots: true, border: '',
+    foreground: '', visible: true, font_size: 32, content: MusicConnector, font: '',
+    spacing_above: small, spacing_below: small, data: null, background: '', format: markdown}
+  name: rich_text_1
+  layout_properties: {slot: title, grid_position: 'CQACXM,DOXPQA'}
