@@ -11,4 +11,5 @@ runtime_options: {version: 2, client_version: '3', server_version: python3-sandb
   server_spec: null}
 metadata: {title: MusicConnector, description: Connect music services}
 startup_form: null
+db_schema: {}
 renamed: true
