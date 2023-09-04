@@ -10,9 +10,7 @@ class index(indexTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-  
-  def form_refreshing_data_bindings(self, **event_args):
-    """This method is called when refreshing_data_bindings is called"""
+  def check_input(self):
     pass
 
   def link_input_pressed_enter(self, **event_args):
@@ -22,6 +20,7 @@ class index(indexTemplate):
 
   def link_input_change(self, **event_args):
     """This method is called when the text in this text box is edited"""
+    
     self.link_submit.visible = True
 
   def link_submit_click(self, **event_args):
