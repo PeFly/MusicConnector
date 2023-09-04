@@ -12,3 +12,8 @@ class result(resultTemplate):
   def form_refreshing_data_bindings(self, **event_args):
     """This method is called when refreshing_data_bindings is called"""
     pass
+
+  def index_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('index')
+

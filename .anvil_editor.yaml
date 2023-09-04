@@ -4,7 +4,7 @@ unique_ids:
     result: '1693760318332337191369684.0934'
   modules: {}
   server_modules:
-    ServerModule1: '1693755763556937894377284.1373'
+    main: '1693755763556937894377284.1373'
   assets:
     standard-page.html: ZM6LG54NUIPGSVL5UFJSZV3HSHK4EWYE
     theme.css: X6V4YFPIITXION4RBPKDR4AJJKUGRH5Q

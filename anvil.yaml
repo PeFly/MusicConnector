@@ -9,7 +9,7 @@ allow_embedding: false
 name: MusicConnector
 runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
   server_spec: null}
-metadata: {title: MusicConnector, description: Connect music services}
+metadata: {title: MusicConnector, description: Connect music services, logo_img: 'https://imgs.search.brave.com/hnWf31CGWE1y2N8m1fIHE_L9SNu1P2a0c8NoALIIEuo/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAxMy8w/Ny8xMy8xMi8xNi9u/b3RlLTE1OTUwOV82/NDAucG5n'}
 startup_form: null
 db_schema: {}
 renamed: true
