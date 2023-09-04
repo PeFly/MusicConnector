@@ -18,7 +18,7 @@ components:
     layout_properties: {grid_position: 'NEKZZQ,HVLNUU'}
   - type: GridPanel
     properties: {spacing_above: small, spacing_below: small, background: 'theme:On
-        Primary', foreground: '', border: '', visible: true, role: null, tooltip: ''}
+        Secondary', foreground: '', border: '', visible: true, role: null, tooltip: ''}
     name: grid_panel_1
     layout_properties: {grid_position: 'WXUNOB,PLKTFL'}
     components:
@@ -29,6 +29,7 @@ components:
         background: '', bold: false, underline: false, icon: 'fa:amazon'}
       name: service_amazon
       layout_properties: {row: DYFMAK, width_xs: 2, col_xs: 0, width: 136.656}
+      event_bindings: {click: service_amazon_click}
   - type: Button
     properties: {role: elevated-button, align: center, tooltip: '', border: '', enabled: true,
       foreground: '#ffffff', visible: true, text: 'Try another link?', font_size: null,
