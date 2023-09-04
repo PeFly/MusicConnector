@@ -920,6 +920,14 @@ textarea.anvil-component.anvil-role-input-error, input.anvil-component.anvil-rol
   border-color: %color:Error%; 
 }
 
+textarea.anvil-component.anvil-role-input-valid, input.anvil-component.anvil-role-input-valid, 
+.anvil-component.anvil-role-input-valid select, .anvil-datepicker.anvil-role-input-valid input {
+  color: green;
+  background-color: transparent;
+  border: 1px solid green;;
+  border-radius: 4px;
+}
+
 /*TODO: figure out what this is used for*/
 /* .daterangepicker .btn-success {
   color: %color:Primary 500%;

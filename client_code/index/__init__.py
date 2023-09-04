@@ -24,8 +24,13 @@ class index(indexTemplate):
   def link_input_change(self, **event_args):
     """This method is called when the text in this text box is edited"""
     if anvil.server.call('check_input', self.link_input.text):
+      self.link_input.role = "input-valid"
       self.link_submit.visible = True
+    elif self.link_input.text == "":
+      self.link_input.role = "None"
+      self.link_submit.visible = False
     else:
+      self.link_input.role = "outlined-error"
       self.link_submit.visible = False
 
   def link_submit_click(self, **event_args):
