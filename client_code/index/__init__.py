@@ -11,21 +11,29 @@ class index(indexTemplate):
 
     # Any code you write here will run before the form opens.
   def check_input(self):
-    pass
+    link_regex = r'https://open\.spotify\.com/(intl-[a-z]{2}/)?(track|album|artist|playlist)/([a-zA-Z0-9]+)'
+    regex_match = re.match(link_regex, self.link_submit.text)
+    if regex_match:
+      print(f"{self.link_input.text} matches {link_regex}")
+      return True
+    else:
+      print(f"{self.link_input.text} not matches {link_regex}")
+      self.link_input.role = "outlined-error"
+      return False
 
   def link_input_pressed_enter(self, **event_args):
     """This method is called when the user presses Enter in this text box"""
-    if self.link_input.text:
+    if self.check_input():
       open_form('result')
 
   def link_input_change(self, **event_args):
     """This method is called when the text in this text box is edited"""
-    
-    self.link_submit.visible = True
+    if self.check_input():
+      self.link_submit.visible = True
 
   def link_submit_click(self, **event_args):
     """This method is called when the button is clicked"""
-    if self.link_input.text:
+    if self.check_input():
       open_form('result')
 
 

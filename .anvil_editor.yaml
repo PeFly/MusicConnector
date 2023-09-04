@@ -2,8 +2,6 @@ unique_ids:
   forms:
     index: KF3HIXR6VPIRA523XSKUXGLIVG2WO5MR
     result: '1693760318332337191369684.0934'
-    result.RowTemplate1: '1693758486859320310094278.752'
-    result.RowTemplate2: '1693760941435496759521518.5903'
   modules: {}
   server_modules:
     ServerModule1: '1693755763556937894377284.1373'
