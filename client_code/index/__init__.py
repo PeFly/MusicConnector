@@ -27,7 +27,7 @@ class index(indexTemplate):
       self.link_input.role = "input-valid"
       self.link_submit.visible = True
     elif self.link_input.text == "":
-      self.link_input.role = "None"
+      self.link_input.role = "outlined"
       self.link_submit.visible = False
     else:
       self.link_input.role = "outlined-error"

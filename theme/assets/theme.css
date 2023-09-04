@@ -922,9 +922,9 @@ textarea.anvil-component.anvil-role-input-error, input.anvil-component.anvil-rol
 
 textarea.anvil-component.anvil-role-input-valid, input.anvil-component.anvil-role-input-valid, 
 .anvil-component.anvil-role-input-valid select, .anvil-datepicker.anvil-role-input-valid input {
-  color: green;
+  color: %color:Valid%;
   background-color: transparent;
-  border: 1px solid green;;
+  border: 1px solid %color:Valid%;;
   border-radius: 4px;
 }
 
