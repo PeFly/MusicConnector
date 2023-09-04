@@ -320,7 +320,7 @@ color_scheme:
   - {name: Tertiary Container, color: '#394667'}
   - {name: On Tertiary, color: '#23304F'}
   - {name: On Tertiary Container, color: '##DAE2FF'}
-  - {name: Error, color: '#FFB4AB'}
+  - {name: Error, color: 'rgba(255,180,171)'}
   - {name: Background, color: '#191C1D'}
   - {name: Surface, color: '#191C1D'}
   - {name: On Background, color: '#E1E3E3'}

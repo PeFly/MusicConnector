@@ -24,12 +24,19 @@ components:
     components:
     - type: Button
       properties: {role: tonal-button, align: center, tooltip: '', border: '', enabled: true,
-        foreground: '#ffffff', visible: true, text: '', font_size: null, font: '',
-        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        foreground: '#ffffff', visible: true, text: Amazon Music, font_size: null,
+        font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
         background: '', bold: false, underline: false, icon: 'fa:amazon'}
       name: service_amazon
-      layout_properties: {row: DYFMAK, width_xs: 2, col_xs: 0, width: 136.656}
+      layout_properties: {row: DYFMAK, width_xs: 4, col_xs: 0, width: 136.656}
       event_bindings: {click: service_amazon_click}
+    - type: Button
+      properties: {role: tonal-button, align: center, tooltip: '', border: '', enabled: true,
+        foreground: '', visible: true, text: Spotify, font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: 'fa:spotify'}
+      name: button_1
+      layout_properties: {row: DYFMAK, width_xs: 3, col_xs: 2, width: 136.656}
   - type: Button
     properties: {role: elevated-button, align: center, tooltip: '', border: '', enabled: true,
       foreground: '#ffffff', visible: true, text: 'Try another link?', font_size: null,
