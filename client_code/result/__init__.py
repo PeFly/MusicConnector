@@ -5,6 +5,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.users
 import anvil.server
+from anvil.js.window import localStorage
 
 class result(resultTemplate):
   def __init__(self, **properties):
@@ -22,5 +23,6 @@ class result(resultTemplate):
     open_form('index')
 
   def spotify_click(self, **event_args):
-    anvil.server.call('spotify_get_link_information')
+    link_data = localStorage.getItem('last_request')
+    print(link_data)
 
