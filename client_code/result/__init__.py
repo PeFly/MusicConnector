@@ -17,3 +17,8 @@ class result(resultTemplate):
     """This method is called when the button is clicked"""
     open_form('index')
 
+  def service_amazon_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    pass
+
+
