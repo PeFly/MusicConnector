@@ -1,5 +1,9 @@
 from ._anvil_designer import resultTemplate
 from anvil import *
+import anvil.tables as tables
+import anvil.tables.query as q
+from anvil.tables import app_tables
+import anvil.users
 import anvil.server
 
 class result(resultTemplate):
@@ -17,8 +21,5 @@ class result(resultTemplate):
     """This method is called when the button is clicked"""
     open_form('index')
 
-  def service_amazon_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    pass
 
 

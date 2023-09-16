@@ -55,6 +55,8 @@ roles:
 - name: input-valid
   components: [TextBox, TextArea, DatePicker, DropDown]
   display_in_toolbox: false
+- name: copy-button
+  components: [Button]
 color_scheme:
   preset_groups:
   - name: Colour Scheme
