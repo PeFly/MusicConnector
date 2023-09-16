@@ -21,5 +21,6 @@ class result(resultTemplate):
     """This method is called when the button is clicked"""
     open_form('index')
 
-
+  def spotify_click(self, **event_args):
+    anvil.server.call('spotify_get_link_information')
 

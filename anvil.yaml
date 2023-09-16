@@ -8,6 +8,9 @@ services:
     use_email: true, allow_remember_me: true, allow_signup: false, enable_automatically: true,
     confirm_email: true, require_mfa: false, remember_me_days: 30}
   server_config: {user_table: users}
+- source: /runtime/services/anvil/secrets.yml
+  client_config: {}
+  server_config: {}
 startup: {type: form, module: index}
 package_name: MusicConnector
 allow_embedding: false
@@ -49,4 +52,11 @@ db_schema:
       type: simpleObject
       admin_ui: {order: 8, width: 200}
     title: Users
+secrets:
+  Spotify.CLIENT_ID:
+    value: {ZDYXB4XNBMZ4LPW2: zxbJ6FXN0jZZGsEms7E/mB1d3XFm3LfUbPygQWqiMrb+KoNsSmgWzDsMLv/i9aOYu6G2l01bkk/AzoJnE71+yNJaM4xL1Gq6OiGEqLeXyApO96mgCWxaLTYlghZAK0Qw35djk0EFzGEDFnOhYS6GrZG/wg19ZfnDqwcfKiz95A==}
+    type: secret
+  Spotify.CLIENT_SECRET:
+    value: {ZDYXB4XNBMZ4LPW2: 3aWKPDmGwHZ0GSjrxSFQjw9Fj4hoFD7pIZt9qm2TuTI1rmID847R67SeJAc0dXLJUHwsvu5SZFGdheA4M80W0H1uST3T7fVPdtJ2E5InGZ2vHBYrxDKFzp+3ecDZpxQ2Ygerl9swGKbBUDeinoSpSvwT6dJVH/CkmXLzVrxGTA==}
+    type: secret
 renamed: true

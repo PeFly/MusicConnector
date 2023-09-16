@@ -5,6 +5,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.users
 import anvil.server
+from anvil.js.window import localStorage
 
 class index(indexTemplate):
   def __init__(self, **properties):
@@ -18,7 +19,7 @@ class index(indexTemplate):
     pass
 
   def go_to_index(self, **event_args):
-    input_text = self.link_input.text
+    anvil.server.call('spotify_get_link_information', self.link_input.text)
     open_form('result')
   
   def link_input_pressed_enter(self, **event_args):
