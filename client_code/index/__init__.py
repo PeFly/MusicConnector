@@ -19,7 +19,7 @@ class index(indexTemplate):
     pass
 
   def go_to_index(self, **event_args):
-    anvil.server.call('spotify_get_link_information', self.link_input.text)
+    self.link_data = anvil.server.call('spotify_get_link_information', self.link_input.text)
     open_form('result')
   
   def link_input_pressed_enter(self, **event_args):
