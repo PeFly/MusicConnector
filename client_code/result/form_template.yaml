@@ -26,7 +26,7 @@ components:
       name: copy_Spotify
       layout_properties: {row: BGEIXQ, width_xs: 2, col_xs: 1, width: 303.328}
       data_bindings: []
-      event_bindings: {click: copy_Spotify_click}
+      event_bindings: {}
     - type: Button
       properties: {role: copy-button, align: full, tooltip: '', border: '', enabled: true,
         foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: large,
