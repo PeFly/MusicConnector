@@ -22,6 +22,6 @@ class result(resultTemplate):
     open_form('index')
 
   def spotify_click(self, **event_args):
-    link_data = localStorage.getItem('last_request')
+    link_data = localStorage.get('last_request', {})
     print(link_data)
 
