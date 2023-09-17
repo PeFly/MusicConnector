@@ -14,12 +14,22 @@ import anvil.http
 import anvil.secrets
 
 import re
+import json
+import os
 from api import spotify
 
 
+
 ##### VARS #####
-SPOTIFY_CLIENT_ID = anvil.secrets.get_secret('Spotify.CLIENT_ID')
-SPOTIFY_CLIENT_SECRET = anvil.secrets.get_secret('Spotify.CLIENT_SECRET')
+secrets_file = "/MusicConnector/app/.secrets"
+if os.path.exists(secrets_file):
+  with open(secrets_file, "r") as secrets_file:
+    secrets = json.load(secrets_file)["Spotify"]
+  SPOTIFY_CLIENT_ID = secrets['CLIENT_ID']
+  SPOTIFY_CLIENT_SECRET = secrets['CLIENT_SECRET']
+else:
+  SPOTIFY_CLIENT_ID = anvil.secrets.get_secret('Spotify.CLIENT_ID')
+  SPOTIFY_CLIENT_SECRET = anvil.secrets.get_secret('Spotify.CLIENT_SECRET')
 
 
 ##### API OBJECTS #####
