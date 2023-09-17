@@ -7,8 +7,8 @@
 import requests
 import json
 import re
-import threading
-from threading import Event
+# import threading
+# from threading import Event
 from time import sleep
 
 
@@ -22,20 +22,20 @@ class API:
     def __init__(self, client_id: str, client_secret: str) -> None:
         self.client: tuple = (client_id, client_secret)
         self.headers = {}
-        self.token_ready = Event()
+    #     self.token_ready = Event()
 
-        update_thread = threading.Thread(target=self.access_token_and_headers)
-        update_thread.daemon = True
-        update_thread.start()
+    #     update_thread = threading.Thread(target=self.access_token_and_headers)
+    #     update_thread.daemon = True
+    #     update_thread.start()
 
-        self.token_ready.wait()
+    #     self.token_ready.wait()
 
-    def access_token_and_headers(self):
-        while True:
-            self.access_token = self.get_access_token()
-            self.headers["Authorization"] = f"Bearer {self.access_token}"
-            self.token_ready.set()
-            sleep(3600)
+    # def access_token_and_headers(self):
+    #     while True:
+    #         self.access_token = self.get_access_token()
+    #         self.headers["Authorization"] = f"Bearer {self.access_token}"
+    #         self.token_ready.set()
+    #         sleep(3600)
 
     def get_access_token(self):
         headers = {
@@ -56,6 +56,8 @@ class API:
 
     def get_id_data(self, link_type, spotify_id):
         url = f"{BASE_URL}{link_type}s/{spotify_id}"
+        self.access_token = self.get_access_token()
+        self.headers["Authorization"] = f"Bearer {self.access_token}"
         response = requests.request("GET", url, headers=self.headers)
         readable_response: dict = json.loads(response.text)
         print(readable_response)
