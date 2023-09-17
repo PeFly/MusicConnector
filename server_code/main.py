@@ -1,4 +1,3 @@
-import anvil.secrets
 ##### MUSIC CONNECTOR #####
 # Translate music between streaming services
 ###########################
