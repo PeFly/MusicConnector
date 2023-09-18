@@ -41,9 +41,9 @@ class API:
             self.spotify_id = regex_match.group(3)
 
     def get_id_data(self, link_type, spotify_id):
-        url = f"{BASE_URL}{link_type}s/{spotify_id}"
-        self.access_token = self.get_access_token()
-        self.headers["Authorization"] = f"Bearer {self.access_token}"
-        response = requests.request("GET", url, headers=self.headers)
-        readable_response: dict = json.loads(response.text)
-        print(readable_response)
+      url = f"{BASE_URL}{link_type}s/{spotify_id}"
+      self.access_token = self.get_access_token()
+      self.headers["Authorization"] = f"Bearer {self.access_token}"
+      response = requests.request("GET", url, headers=self.headers)
+      readable_response: dict = json.loads(response.text)
+      return readable_response

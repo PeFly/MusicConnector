@@ -7,15 +7,13 @@ import json
 class result(resultTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
-    global link
-    self.link = global_vars.link
     self.init_components(**properties)
-    self.link_response = anvil.server.call('spotify_get_link_information', self.link)
-    self.id_response = anvil.server.call('spotify_get_id_data', self.link_response[0], self.link_response[1])
     # Any code you write here will run before the form opens.
-
-  # def get_lnik_informations(self):
-    # self.link_response = anvil.server.call('spotify_get_link_information', self.link)
+    with anvil.server.no_loading_indicator:
+      global link
+      self.link = global_vars.link
+      self.link_response = anvil.server.call('spotify_get_link_information', self.link)
+      self.id_response = anvil.server.call('spotify_get_id_data', self.link_response[0], self.link_response[1])
 
   def form_refreshing_data_bindings(self, **event_args):
     """This method is called when refreshing_data_bindings is called"""
@@ -28,6 +26,16 @@ class result(resultTemplate):
     open_form('index')
 
   def spotify_click(self, **event_args):
-    self.output_label.text = self.id_response
-    self.output_label.visible = True
+    if self.output_label.visible == False:
+      self.output_label.text = self.id_response
+      album_data = self.id_response.get('album', {})
+      images_list = album_data.get('images', [])
+      first_image_url = images_list[0].get('url', '')
+      self.artist_image.source = first_image_url
+      self.output_label.visible = True
+      self.artist_image.visible = True
+    else:
+      self.output_label.visible = False
+      self.artist_image.visible = False
+      
 

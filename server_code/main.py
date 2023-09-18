@@ -34,7 +34,8 @@ spotify_music = spotify.API(client_id=SPOTIFY_CLIENT_ID, client_secret=SPOTIFY_C
 ##### CLIENT CALLABLE #####
 @anvil.server.callable
 def check_input(input_link):
-  link_regex = r'https://open\.spotify\.com/(intl-[a-z]{2}/)?(track|album|artist|playlist)/([a-zA-Z0-9]+)'
+  # link_regex = r'https://open\.spotify\.com/(intl-[a-z]{2}/)?(track|album|artist|playlist)/([a-zA-Z0-9]+)'
+  link_regex = r'https://open\.spotify\.com/(intl-[a-z]{2}/)?track/([a-zA-Z0-9]+)'
   if re.match(link_regex, input_link):
     return True
   else:
@@ -48,5 +49,5 @@ def spotify_get_link_information(input_link):
 
 @anvil.server.callable
 def spotify_get_id_data(link_type, spotify_id):
-  id_data = spotify_music.get_id_data(link_type, spotify_id)
+  id_data: dict = spotify_music.get_id_data(link_type, spotify_id)
   return id_data
