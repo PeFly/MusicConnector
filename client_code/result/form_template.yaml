@@ -43,10 +43,10 @@ components:
       layout_properties: {row: BGEIXQ, width_xs: 2, col_xs: 9, width: 136.664}
   - type: Label
     properties: {role: body, align: left, tooltip: '', border: '', foreground: 'theme:Primary',
-      visible: false, text: '', font_size: null, font: '', spacing_above: medium,
-      icon_align: left, spacing_below: small, italic: false, background: 'theme:On
-        Primary', bold: false, underline: false, icon: ''}
-    name: label_2
+      visible: false, text: '', font_size: 18, font: '', spacing_above: medium, icon_align: left,
+      spacing_below: medium, italic: false, background: 'theme:On Primary', bold: false,
+      underline: false, icon: ''}
+    name: output_label
     layout_properties: {grid_position: 'RUMTSN,OQYTDU'}
     data_bindings: []
   - type: Button

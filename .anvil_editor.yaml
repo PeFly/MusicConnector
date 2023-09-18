@@ -2,7 +2,8 @@ unique_ids:
   forms:
     index: KF3HIXR6VPIRA523XSKUXGLIVG2WO5MR
     result: '1693760318332337191369684.0934'
-  modules: {}
+  modules:
+    global_vars: '1695028074478790178037891.3018'
   server_modules:
     api: '169488761953392255832026.69841'
     api.spotify: '1694887625766840492233614.2845'

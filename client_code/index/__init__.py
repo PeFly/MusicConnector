@@ -1,11 +1,7 @@
 from ._anvil_designer import indexTemplate
 from anvil import *
-import anvil.tables as tables
-import anvil.tables.query as q
-from anvil.tables import app_tables
 import anvil.server
-from anvil.js.window import localStorage
-import json
+from .. import global_vars
 
 class index(indexTemplate):
   def __init__(self, **properties):
@@ -19,13 +15,14 @@ class index(indexTemplate):
     pass
 
   def go_to_index(self, **event_args):
-    self.link_data = anvil.server.call('spotify_get_link_information', self.link_input.text)
-    localStorage.setItem('last_request', json.dumps(self.link_data))
+    global link
+    global_vars.link = self.link_input.text
     open_form('result')
   
   def link_input_pressed_enter(self, **event_args):
     """This method is called when the user presses Enter in this text box"""
     if anvil.server.call('check_input', self.link_input.text):
+      
       self.go_to_index()
     else:
       self.link_input.role = "outlined-error"
