@@ -42,7 +42,8 @@ def check_input(input_link):
 
 @anvil.server.callable
 def spotify_get_link_information(input_link):
-  link_data = spotify_music.get_link_information(input_link)
+  spotify_music.get_link_information(input_link)
+  link_data = spotify_music.link_type, spotify_music.spotify_id
   return link_data
 
 @anvil.server.callable

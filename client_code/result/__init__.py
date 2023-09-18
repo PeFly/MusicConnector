@@ -11,7 +11,7 @@ class result(resultTemplate):
     self.link = global_vars.link
     self.init_components(**properties)
     self.link_response = anvil.server.call('spotify_get_link_information', self.link)
-    print(self.link_response)
+    self.id_response = anvil.server.call('spotify_get_id_data', self.link_response[0], self.link_response[1])
     # Any code you write here will run before the form opens.
 
   # def get_lnik_informations(self):
@@ -28,6 +28,6 @@ class result(resultTemplate):
     open_form('index')
 
   def spotify_click(self, **event_args):
-    self.output_label.text = self.link_response
+    self.output_label.text = self.id_response
     self.output_label.visible = True
 
