@@ -2,8 +2,12 @@ unique_ids:
   forms:
     index: KF3HIXR6VPIRA523XSKUXGLIVG2WO5MR
     result: '1693760318332337191369684.0934'
-  modules: {}
+    result.RowTemplate1: '1695036140093864702521237.107'
+  modules:
+    global_vars: '1695028074478790178037891.3018'
   server_modules:
+    api: '169488761953392255832026.69841'
+    api.spotify: '1694887625766840492233614.2845'
     main: '1693755763556937894377284.1373'
   assets:
     standard-page.html: ZM6LG54NUIPGSVL5UFJSZV3HSHK4EWYE

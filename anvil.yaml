@@ -3,11 +3,9 @@ services:
 - source: /runtime/services/tables.yml
   client_config: {}
   server_config: {}
-- source: /runtime/services/anvil/users.yml
-  client_config: {mfa_timeout_days: 0, require_secure_passwords: true, use_token: false,
-    use_email: true, allow_remember_me: true, allow_signup: false, enable_automatically: true,
-    confirm_email: true, require_mfa: false, remember_me_days: 30}
-  server_config: {user_table: users}
+- source: /runtime/services/anvil/secrets.yml
+  client_config: {}
+  server_config: {}
 startup: {type: form, module: index}
 package_name: MusicConnector
 allow_embedding: false
@@ -16,37 +14,12 @@ runtime_options: {version: 2, client_version: '3', server_version: python3-sandb
   server_spec: null}
 metadata: {title: MusicConnector, description: Connect music services, logo_img: 'https://imgs.search.brave.com/hnWf31CGWE1y2N8m1fIHE_L9SNu1P2a0c8NoALIIEuo/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAxMy8w/Ny8xMy8xMi8xNi9u/b3RlLTE1OTUwOV82/NDAucG5n'}
 startup_form: null
-db_schema:
-  users:
-    client: none
-    server: full
-    columns:
-    - name: email
-      type: string
-      admin_ui: {order: 0, width: 200}
-    - name: enabled
-      type: bool
-      admin_ui: {order: 1, width: 200}
-    - name: last_login
-      type: datetime
-      admin_ui: {order: 2, width: 200}
-    - name: password_hash
-      type: string
-      admin_ui: {order: 3, width: 200}
-    - name: n_password_failures
-      type: number
-      admin_ui: {order: 4, width: 200}
-    - name: confirmed_email
-      type: bool
-      admin_ui: {order: 5, width: 200}
-    - name: mfa
-      type: simpleObject
-      admin_ui: {order: 6, width: 200}
-    - name: signed_up
-      type: datetime
-      admin_ui: {order: 7, width: 200}
-    - name: remembered_logins
-      type: simpleObject
-      admin_ui: {order: 8, width: 200}
-    title: Users
+db_schema: {}
+secrets:
+  Spotify.CLIENT_ID:
+    value: {ZDYXB4XNBMZ4LPW2: zxbJ6FXN0jZZGsEms7E/mB1d3XFm3LfUbPygQWqiMrb+KoNsSmgWzDsMLv/i9aOYu6G2l01bkk/AzoJnE71+yNJaM4xL1Gq6OiGEqLeXyApO96mgCWxaLTYlghZAK0Qw35djk0EFzGEDFnOhYS6GrZG/wg19ZfnDqwcfKiz95A==}
+    type: secret
+  Spotify.CLIENT_SECRET:
+    value: {ZDYXB4XNBMZ4LPW2: 3aWKPDmGwHZ0GSjrxSFQjw9Fj4hoFD7pIZt9qm2TuTI1rmID847R67SeJAc0dXLJUHwsvu5SZFGdheA4M80W0H1uST3T7fVPdtJ2E5InGZ2vHBYrxDKFzp+3ecDZpxQ2Ygerl9swGKbBUDeinoSpSvwT6dJVH/CkmXLzVrxGTA==}
+    type: secret
 renamed: true
